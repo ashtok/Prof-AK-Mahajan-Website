@@ -108,33 +108,6 @@
             background-color: var(--terracotta);
         }
         
-        /* Header Styles */
-        header {
-            background-color: var(--light-text);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--terracotta);
-        }
-        
-        .logo span {
-            color: var(--slate-gray);
-            font-weight: 400;
-        }
         
         nav ul {
             display: flex;
@@ -762,44 +735,42 @@
     </section>
     
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-container">
+            <div class="footer-grid">
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="memberships.html">Memberships</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html#seismic">Seismic Hazard Assessment</a></li>
-                        <li><a href="services.html#disaster">Disaster Management</a></li>
-                        <li><a href="services.html#environmental">Environmental Geology</a></li>
-                        <li><a href="services.html#mapping">Geological Mapping</a></li>
-                        <li><a href="services.html#expert">Expert Testimony</a></li>
-                        <li><a href="services.html#training">Training & Education</a></li>
+                        <li><a href="#">Seismic Hazard Assessment</a></li>
+                        <li><a href="#">Disaster Management</a></li>
+                        <li><a href="#">Environmental Sciences</a></li>
+                        <li><a href="#">Geological Mapping</a></li>
+                        <li><a href="#">Academic Consultation</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-col footer-contact">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    <p><i class="fas fa-envelope"></i> prof.mahajan@example.com</p>
                     <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
-                    <p><i class="fab fa-linkedin"></i> LinkedIn Profile</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Office Location, City, State</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Himachal Pradesh, India</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="copyright">
+            <div class="footer-bottom">
                 <p>&copy; 2025 Prof. Ambrish Kumar Mahajan. All Rights Reserved.</p>
             </div>
         </div>
