@@ -384,16 +384,25 @@ a:hover {
 /* Page Header */
 .page-header {
   background-color: var(--sand-beige);
-  padding: 60px 0;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .page-header h1 {
-  color: var(--deep-blue);
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
 }
 
+.page-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
 .breadcrumbs {
   color: var(--slate-gray);
 }
@@ -402,6 +411,10 @@ a:hover {
   color: var(--terracotta);
 }
 
+.breadcrumbs span {
+  margin: 0 0.5rem;
+  color: var(--mid-gray);
+}
 
 /* Publications Page Specific Styles */
 .research-focus {
@@ -1102,27 +1115,6 @@ a:hover {
   bottom: -40px;
   right: 0;
   transform: rotate(180deg);
-}
-
-/* Page Header */
-.page-header {
-  background-color: var(--sand-beige);
-  padding: 60px 0;
-  text-align: center;
-}
-
-.page-header h1 {
-  color: var(--deep-blue);
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.breadcrumbs {
-  color: var(--slate-gray);
-}
-
-.breadcrumbs a {
-  color: var(--terracotta);
 }
 
 /* Bio Section */
