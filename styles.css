@@ -50,6 +50,7 @@ a:hover {
   --light-gray: #f5f5f5;
   --mid-gray: #e0e0e0;
   --dark-gray: #333333;
+  --text-light: #666666;
   --white: #ffffff;
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
