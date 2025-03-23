@@ -10,25 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --primary-terracotta: #A63A24;
-            --primary-slate: #596869;
-            --primary-sand: #D9C5B2;
-            --accent-green: #34623F;
-            --accent-blue: #1D3557;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --background-light: #F8F8F8;
-            --white: #FFFFFF;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
         body {
             font-family: 'Open Sans', sans-serif;
@@ -41,13 +23,13 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--primary-slate);
+            color: var(--slate-gray);
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
         }
 
         h2 {
@@ -63,12 +45,12 @@
             bottom: 0;
             height: 3px;
             width: 80px;
-            background-color: var(--accent-green);
+            background-color: var(--forest-green);
         }
 
         h3 {
             font-size: 1.5rem;
-            color: var(--accent-blue);
+            color: var(--deep-blue);
         }
 
         p {
@@ -77,13 +59,13 @@
         }
 
         a {
-            color: var(--accent-blue);
+            color: var(--deep-blue);
             text-decoration: none;
             transition: var(--transition);
         }
 
         a:hover {
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
         }
 
         /* Layout */
@@ -111,28 +93,6 @@
         }
 
         /* Header */
-        header {
-            background-color: var(--white);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-terracotta);
-        }
-
         .nav-links {
             display: flex;
             list-style: none;
@@ -152,7 +112,7 @@
 
         .nav-links a:hover,
         .nav-links a.active {
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
         }
 
         .nav-links a.active::after {
@@ -162,7 +122,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background-color: var(--primary-terracotta);
+            background-color: var(--terracotta);
         }
 
         .mobile-nav-toggle {
@@ -170,7 +130,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--primary-slate);
+            color: var(--slate-gray);
             cursor: pointer;
         }
 
@@ -215,12 +175,12 @@
             border-radius: 50%;
             object-fit: cover;
             margin-right: 15px;
-            background-color: var(--primary-sand);
+            background-color: var(--sand-beige);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            color: var(--primary-slate);
+            color: var(--slate-gray);
         }
 
         .society-title h3 {
@@ -230,7 +190,7 @@
 
         .society-status {
             font-weight: 600;
-            color: var(--accent-green);
+            color: var(--forest-green);
         }
 
         .society-details {
@@ -244,7 +204,7 @@
         }
 
         .society-info i {
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
             margin-right: 10px;
             width: 20px;
         }
@@ -287,12 +247,12 @@
         .committee-name {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
-            color: var(--accent-blue);
+            color: var(--deep-blue);
             margin-bottom: 5px;
         }
 
         .committee-role {
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -304,7 +264,7 @@
         }
 
         .committee-duration i {
-            color: var(--primary-slate);
+            color: var(--slate-gray);
             margin-right: 10px;
         }
 
@@ -336,7 +296,7 @@
         }
 
         .position-title {
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
             font-weight: 600;
             margin-bottom: 10px;
         }
@@ -354,7 +314,7 @@
 
         /* Footer */
         footer {
-            background-color: var(--primary-slate);
+            background-color: var(--slate-gray);
             color: var(--white);
             padding: 60px 0 20px;
         }
@@ -381,7 +341,7 @@
         }
 
         .footer-links a {
-            color: var(--primary-sand);
+            color: var(--sand-beige);
         }
 
         .footer-links a:hover {
@@ -399,7 +359,7 @@
 
         .contact-info i {
             margin-right: 10px;
-            color: var(--primary-sand);
+            color: var(--sand-beige);
         }
 
         .copyright {
@@ -411,7 +371,7 @@
 
         /* Call to Action */
         .cta-section {
-            background-color: var(--accent-blue);
+            background-color: var(--deep-blue);
             color: var(--white);
             text-align: center;
             padding: 60px 0;
@@ -430,7 +390,7 @@
 
         .cta-btn {
             display: inline-block;
-            background-color: var(--primary-terracotta);
+            background-color: var(--terracotta);
             color: var(--white);
             padding: 12px 30px;
             border-radius: 50px;
@@ -443,7 +403,7 @@
 
         .cta-btn:hover {
             background-color: var(--white);
-            color: var(--primary-terracotta);
+            color: var(--terracotta);
             transform: translateY(-3px);
         }
 

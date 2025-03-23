@@ -47,15 +47,14 @@ a:hover {
   --sand-beige: #D9C5B2;
   --forest-green: #34623F;
   --deep-blue: #1D3557;
-  --primary-terracotta: #A63A24;
-  --primary-slate: #596869;
-  --primary-sand: #D9C5B2;
-  --accent-green: #34623F;
-  --accent-blue: #1D3557;
   --light-gray: #f5f5f5;
   --mid-gray: #e0e0e0;
   --dark-gray: #333333;
   --white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 /* Button Styles */
@@ -382,7 +381,7 @@ a:hover {
 
 .research-focus h2 {
   font-family: 'Montserrat', sans-serif;
-  color: var(--primary-terracotta);
+  color: var(--terracotta);
   margin-bottom: 1rem;
   font-size: 1.8rem;
 }
@@ -399,7 +398,7 @@ a:hover {
 .filter-container h3 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
-  color: var(--primary-slate);
+  color: var(--slate-gray);
 }
 
 .filter-options {
@@ -418,7 +417,7 @@ a:hover {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: var(--primary-slate);
+  color: var(--slate-gray);
 }
 
 .filter-group select,
@@ -450,7 +449,7 @@ a:hover {
 }
 
 .btn-primary {
-  background-color: var(--primary-terracotta);
+  background-color: var(--terracotta);
   color: var(--white);
 }
 
@@ -495,17 +494,17 @@ a:hover {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--accent-blue);
+  color: var(--deep-blue);
 }
 
 .publication-meta {
-  color: var(--primary-slate);
+  color: var(--slate-gray);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .publication-year {
-  background-color: var(--primary-terracotta);
+  background-color: var(--terracotta);
   color: var(--white);
   padding: 0.3rem 0.6rem;
   border-radius: 3px;
@@ -538,7 +537,7 @@ a:hover {
 }
 
 .read-more {
-  color: var(--primary-terracotta);
+  color: var(--terracotta);
   cursor: pointer;
   font-weight: 600;
   display: inline-block;
@@ -554,7 +553,7 @@ a:hover {
 .publication-link {
   display: inline-flex;
   align-items: center;
-  color: var(--accent-blue);
+  color: var(--deep-blue);
   font-weight: 600;
   text-decoration: none;
   margin-right: 1rem;
@@ -590,8 +589,8 @@ a:hover {
 }
 
 .tab.active {
-  color: var(--primary-terracotta);
-  border-bottom: 2px solid var(--primary-terracotta);
+  color: var(--terracotta);
+  border-bottom: 2px solid var(--terracotta);
 }
 
 .tab-content {
@@ -614,13 +613,13 @@ a:hover {
 .dissertation-year {
   min-width: 100px;
   font-weight: 600;
-  color: var(--primary-terracotta);
+  color: var(--terracotta);
 }
 
 .dissertation-info h4 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
-  color: var(--accent-blue);
+  color: var(--deep-blue);
 }
 
 .dissertation-student {
@@ -649,7 +648,7 @@ a:hover {
 
 .project-image {
   height: 200px;
-  background-color: var(--primary-slate);
+  background-color: var(--slate-gray);
   background-size: cover;
   background-position: center;
 }
@@ -661,11 +660,11 @@ a:hover {
 .project-title {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
-  color: var(--accent-blue);
+  color: var(--deep-blue);
 }
 
 .project-date {
-  color: var(--primary-terracotta);
+  color: var(--terracotta);
   font-weight: 600;
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
@@ -674,7 +673,7 @@ a:hover {
 .project-org {
   font-style: italic;
   margin-bottom: 1rem;
-  color: var(--primary-slate);
+  color: var(--slate-gray);
 }
 
 .pagination {
@@ -693,9 +692,9 @@ a:hover {
 }
 
 .pagination button.active {
-  background-color: var(--primary-terracotta);
+  background-color: var(--terracotta);
   color: var(--white);
-  border-color: var(--primary-terracotta);
+  border-color: var(--terracotta);
 }
 
 .pagination button:hover:not(.active) {
@@ -1403,7 +1402,7 @@ a:hover {
 
 .modal-title {
   font-family: 'Montserrat', sans-serif;
-  color: var(--primary-terracotta);
+  color: var(--terracotta);
 }
 
 .close-modal {
@@ -1429,7 +1428,7 @@ a:hover {
 }
 
 .citation-tab.active {
-  background-color: var(--primary-terracotta);
+  background-color: var(--terracotta);
   color: var(--white);
 }
 
@@ -1446,7 +1445,7 @@ a:hover {
 }
 
 .copy-btn {
-  background-color: var(--accent-blue);
+  background-color: var(--deep-blue);
   color: var(--white);
   border: none;
   padding: 0.5rem 1rem;
@@ -1463,7 +1462,7 @@ a:hover {
 
 .copy-message {
   display: none;
-  color: var(--accent-green);
+  color: var(--forest-green);
   margin-top: 0.5rem;
 }
 
