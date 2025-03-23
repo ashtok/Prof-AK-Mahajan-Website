@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise & Services - Prof. Ambrish Kumar Mahajan | Geological Consultation</title>
+    <meta name="description" content="Professional geological consultation services offered by Prof. Ambrish Kumar Mahajan, including seismic hazard assessment, disaster management, and environmental sciences.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --terracotta: #A63A24;
+            --slate-gray: #596869;
+            --sand-beige: #D9C5B2;
+            --forest-green: #34623F;
+            --deep-blue: #1D3557;
+            --light-bg: #F8F5F2;
+            --dark-text: #333333;
+            --light-text: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--terracotta);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--slate-gray);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--deep-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--terracotta);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--terracotta);
+            color: var(--light-text);
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--deep-blue);
+            color: var(--light-text);
+        }
+        
+        .btn-secondary {
+            background-color: var(--deep-blue);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--terracotta);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--light-text);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--terracotta);
+        }
+        
+        .logo span {
+            color: var(--slate-gray);
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--slate-gray);
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--terracotta);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--slate-gray);
+        }
+        
+        /* Page Title Section */
+        .page-title {
+            background-color: var(--slate-gray);
+            color: var(--light-text);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-title h1 {
+            color: var(--light-text);
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Services Overview Section */
+        .services-overview {
+            padding: 80px 0;
+        }
+        
+        .services-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        /* Service Cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .service-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            background-color: var(--sand-beige);
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            color: var(--terracotta);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+        }
+        
+        .service-list {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .service-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+        }
+        
+        .service-card .btn {
+            margin-top: 15px;
+        }
+        
+        /* Consultation Process */
+        .consultation-process {
+            padding: 80px 0;
+            background-color: var(--sand-beige);
+        }
+        
+        .process-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--terracotta);
+            color: var(--light-text);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -15px;
+            width: 30px;
+            height: 2px;
+            background-color: var(--terracotta);
+            display: none;
+        }
+        
+        @media (min-width: 992px) {
+            .process-step:not(:last-child):after {
+                display: block;
+            }
+        }
+        
+        .step-icon {
+            font-size: 2rem;
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Industries Section */
+        .industries {
+            padding: 80px 0;
+        }
+        
+        .industries-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .industry-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .industry-icon {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--deep-blue);
+            color: var(--light-text);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            color: var(--light-text);
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--slate-gray);
+            color: var(--light-text);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--sand-beige);
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-text);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--sand-beige);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--light-text);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .page-title {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Prof. A.K. Mahajan <span>| Geological Consultation</span></div>
+            <nav>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="memberships.html">Memberships</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Page Title Section -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Expertise & Services</h1>
+            <p>Specialized geological consultation services backed by over 35 years of academic and field experience</p>
+        </div>
+    </section>
+    
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="services-intro">
+                <h2>Professional Consultation Services</h2>
+                <p>With decades of expertise in geological sciences, Prof. Mahajan offers specialized consultation services tailored to address complex geological challenges across various sectors. Each engagement benefits from rigorous scientific analysis, practical field experience, and deep academic knowledge.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Seismic Hazard Assessment Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wave-square"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Seismic Hazard Assessment</h3>
+                        <p>Comprehensive analysis and evaluation of seismic risks for infrastructure projects, urban planning, and risk mitigation strategies in seismically active regions.</p>
+                        <ul class="service-list">
+                            <li>Seismic microzonation studies</li>
+                            <li>Ground motion prediction</li>
+                            <li>Site-specific seismic hazard analysis</li>
+                            <li>Liquefaction potential assessment</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+                
+                <!-- Disaster Management Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Disaster Management</h3>
+                        <p>Strategic consulting for preparation, response, and recovery from geological hazards including earthquakes, landslides, and other natural disasters.</p>
+                        <ul class="service-list">
+                            <li>Hazard vulnerability assessment</li>
+                            <li>Disaster risk reduction planning</li>
+                            <li>Post-disaster geological evaluation</li>
+                            <li>Training and capacity building</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+                
+                <!-- Environmental Geology Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Environmental Geology</h3>
+                        <p>Assessment of environmental impacts related to geological factors, including groundwater resources, soil contamination, and sustainable resource management.</p>
+                        <ul class="service-list">
+                            <li>Groundwater resource evaluation</li>
+                            <li>Environmental impact assessment</li>
+                            <li>Land use suitability analysis</li>
+                            <li>Remediation strategy development</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+                
+                <!-- Geological Mapping Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Geological Mapping & Surveys</h3>
+                        <p>Detailed field investigations and mapping services to characterize geological conditions for various applications including construction, mining, and land development.</p>
+                        <ul class="service-list">
+                            <li>Lithological and structural mapping</li>
+                            <li>Geomorphological assessment</li>
+                            <li>Terrain evaluation</li>
+                            <li>Remote sensing analysis</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+                
+                <!-- Expert Testimony Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Expert Testimony & Reporting</h3>
+                        <p>Providing expert geological opinions, reports, and testimony for legal proceedings, insurance claims, and regulatory compliance matters.</p>
+                        <ul class="service-list">
+                            <li>Forensic geology investigations</li>
+                            <li>Expert witness services</li>
+                            <li>Technical report preparation</li>
+                            <li>Peer review of geological assessments</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+                
+                <!-- Training & Education Card -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Training & Education</h3>
+                        <p>Specialized training programs and educational workshops on geological principles, hazard assessment, and field investigation techniques for professionals and organizations.</p>
+                        <ul class="service-list">
+                            <li>Customized workshop development</li>
+                            <li>Field training programs</li>
+                            <li>Technical skill development</li>
+                            <li>Professional development courses</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Inquire About This Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Consultation Process Section -->
+    <section class="consultation-process">
+        <div class="container">
+            <div class="process-title">
+                <h2>Consultation Process</h2>
+                <p>A structured approach to delivering effective geological consultation</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-comments"></i></div>
+                    <h3 class="step-title">Initial Inquiry</h3>
+                    <p>Preliminary discussion to understand your specific needs and objectives</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h3 class="step-title">Preliminary Assessment</h3>
+                    <p>Initial evaluation of the geological context and project requirements</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3 class="step-title">Proposal & Scope</h3>
+                    <p>Detailed proposal outlining methodology, deliverables, timeline, and terms</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-tasks"></i></div>
+                    <h3 class="step-title">Project Execution</h3>
+                    <p>Implementation of the agreed methodology with regular progress updates</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="step-title">Reporting</h3>
+                    <p>Comprehensive documentation of findings, analysis, and recommendations</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <div class="step-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="step-title">Follow-up Support</h3>
+                    <p>Ongoing assistance and clarification to ensure effective implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries Section -->
+    <section class="industries">
+        <div class="container">
+            <div class="industries-title">
+                <h2>Industries Served</h2>
+                <p>Providing specialized geological expertise across diverse sectors</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Construction & Infrastructure</h3>
+                    <p>Site assessment and geohazard evaluation for buildings, bridges, dams, and transportation infrastructure</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <h3>Urban Planning</h3>
+                    <p>Geological input for sustainable urban development, land use planning, and hazard-resistant design</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Mining & Resources</h3>
+                    <p>Geological assessment for resource exploration, extraction planning, and site rehabilitation</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Government & Public Sector</h3>
+                    <p>Technical support for policy development, regulatory compliance, and public safety initiatives</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Academic & Research</h3>
+                    <p>Collaboration on research projects, peer review, and educational program development</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Water Resources</h3>
+                    <p>Hydrogeological assessment, groundwater management, and water quality evaluation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Engage Expert Geological Consultation?</h2>
+                <p>Contact Prof. Mahajan today to discuss how his expertise can address your specific geological challenges.</p>
+                <a href="contact.html" class="btn">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#seismic">Seismic Hazard Assessment</a></li>
+                        <li><a href="services.html#disaster">Disaster Management</a></li>
+                        <li><a href="services.html#environmental">Environmental Geology</a></li>
+                        <li><a href="services.html#mapping">Geological Mapping</a></li>
+                        <li><a href="services.html#expert">Expert Testimony</a></li>
+                        <li><a href="services.html#training">Training & Education</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fab fa-linkedin"></i> LinkedIn Profile</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Office Location, City, State</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Prof. Ambrish Kumar Mahajan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = event.target.closest('nav');
+            if (!isClickInsideNav && document.querySelector('nav ul').classList.contains('show')) {
+                document.querySelector('nav ul').classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

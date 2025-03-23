@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memberships & Affiliations | Prof. Ambrish Kumar Mahajan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-terracotta: #A63A24;
+            --primary-slate: #596869;
+            --primary-sand: #D9C5B2;
+            --accent-green: #34623F;
+            --accent-blue: #1D3557;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #F8F8F8;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--background-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-slate);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-terracotta);
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 80px;
+            background-color: var(--accent-green);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-terracotta);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-terracotta);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-terracotta);
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-terracotta);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-slate);
+            cursor: pointer;
+        }
+
+        /* Memberships Sections */
+        .memberships-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        /* Professional Societies */
+        .societies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .society-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .society-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .society-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .society-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            background-color: var(--primary-sand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-slate);
+        }
+
+        .society-title h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .society-status {
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .society-details {
+            padding: 20px;
+        }
+
+        .society-info {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .society-info i {
+            color: var(--primary-terracotta);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        /* Committee Memberships */
+        .committee-section {
+            background-color: #f0f3f5;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .committees-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .committee-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .committee-details {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .committee-meta {
+            flex: 1;
+            min-width: 200px;
+            border-left: 1px solid #eee;
+            padding-left: 20px;
+            margin-left: 20px;
+        }
+
+        .committee-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 5px;
+        }
+
+        .committee-role {
+            color: var(--primary-terracotta);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .committee-duration {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .committee-duration i {
+            color: var(--primary-slate);
+            margin-right: 10px;
+        }
+
+        /* Academic Affiliations */
+        .affiliations-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .affiliation-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .affiliation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .university-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .position-title {
+            color: var(--primary-terracotta);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .affiliation-dates {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .affiliation-dates i {
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-slate);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--primary-sand);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-sand);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta-title {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-terracotta);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--white);
+            color: var(--primary-terracotta);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .committee-meta {
+                border-left: none;
+                border-top: 1px solid #eee;
+                padding-left: 0;
+                margin-left: 0;
+                padding-top: 15px;
+                margin-top: 15px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Prof. A.K. Mahajan</a>
+            <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="memberships.html" class="active">Memberships</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Memberships & Affiliations</h1>
+                <div class="memberships-intro">
+                    <p>Professor Ambrish Kumar Mahajan has been an active member of various prestigious professional societies, committees, and academic institutions throughout his distinguished career in geology. These affiliations reflect his commitment to advancing geological sciences and sharing expertise across various platforms.</p>
+                </div>
+
+                <!-- Professional Societies Section -->
+                <h2>Professional Societies</h2>
+                <div class="societies-container">
+                    <!-- Society 1 -->
+                    <div class="society-card">
+                        <div class="society-header">
+                            <div class="society-logo">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <div class="society-title">
+                                <h3>Geological Society of India</h3>
+                                <div class="society-status">Fellow</div>
+                            </div>
+                        </div>
+                        <div class="society-details">
+                            <div class="society-info">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Member since 1985</span>
+                            </div>
+                            <div class="society-info">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Editorial Board Member (2010-2015)</span>
+                            </div>
+                            <p>Contributed to multiple committees and technical reviews for journal publications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Society 2 -->
+                    <div class="society-card">
+                        <div class="society-header">
+                            <div class="society-logo">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div class="society-title">
+                                <h3>International Association of Engineering Geology</h3>
+                                <div class="society-status">Active Member</div>
+                            </div>
+                        </div>
+                        <div class="society-details">
+                            <div class="society-info">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Member since 1995</span>
+                            </div>
+                            <div class="society-info">
+                                <i class="fas fa-users"></i>
+                                <span>Regional Representative (2008-2012)</span>
+                            </div>
+                            <p>Participated in international conferences and collaborative research initiatives focused on engineering geology applications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Society 3 -->
+                    <div class="society-card">
+                        <div class="society-header">
+                            <div class="society-logo">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="society-title">
+                                <h3>Seismological Society of America</h3>
+                                <div class="society-status">International Member</div>
+                            </div>
+                        </div>
+                        <div class="society-details">
+                            <div class="society-info">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Member since 2000</span>
+                            </div>
+                            <div class="society-info">
+                                <i class="fas fa-book"></i>
+                                <span>Reviewer for SSA Bulletin</span>
+                            </div>
+                            <p>Regular contributor to seismic hazard assessment methodologies and analytical frameworks for earthquake risk mitigation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Society 4 -->
+                    <div class="society-card">
+                        <div class="society-header">
+                            <div class="society-logo">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="society-title">
+                                <h3>International Association of Hydrogeologists</h3>
+                                <div class="society-status">Member</div>
+                            </div>
+                        </div>
+                        <div class="society-details">
+                            <div class="society-info">
+                                <i class="far fa-calendar-alt"></i>
+                                <span>Member since 2005</span>
+                            </div>
+                            <div class="society-info">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Working Group on Mountain Aquifers</span>
+                            </div>
+                            <p>Specialized in the study of groundwater systems in complex Himalayan terrain and their vulnerability to seismic activities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Committee Memberships Section -->
+                <div class="committee-section">
+                    <div class="container">
+                        <h2>Government & Academic Committees</h2>
+                        <div class="committees-container">
+                            <!-- Committee 1 -->
+                            <div class="committee-item">
+                                <div class="committee-details">
+                                    <h3 class="committee-name">National Disaster Management Authority</h3>
+                                    <div class="committee-role">Expert Member, Seismic Vulnerability Assessment Committee</div>
+                                    <p>Led the development of comprehensive seismic microzonation methodologies for urban centers in seismically active regions. Contributed to national guidelines for earthquake risk assessment and mitigation strategies.</p>
+                                </div>
+                                <div class="committee-meta">
+                                    <div class="committee-duration">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>2012 - 2018</span>
+                                    </div>
+                                    <div class="committee-achievement">
+                                        <strong>Key Contribution:</strong> Authored chapter on "Geological Inputs for Seismic Microzonation" in the national guidelines.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Committee 2 -->
+                            <div class="committee-item">
+                                <div class="committee-details">
+                                    <h3 class="committee-name">Bureau of Indian Standards</h3>
+                                    <div class="committee-role">Technical Committee Member, Earthquake Engineering Sectional Committee</div>
+                                    <p>Participated in the revision of seismic codes and standards for building construction in India. Provided geological expertise for the assessment of site-specific seismic parameters and foundation conditions.</p>
+                                </div>
+                                <div class="committee-meta">
+                                    <div class="committee-duration">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>2010 - 2020</span>
+                                    </div>
+                                    <div class="committee-achievement">
+                                        <strong>Key Contribution:</strong> Revision of IS 1893 (Criteria for Earthquake Resistant Design of Structures).
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Committee 3 -->
+                            <div class="committee-item">
+                                <div class="committee-details">
+                                    <h3 class="committee-name">Ministry of Earth Sciences</h3>
+                                    <div class="committee-role">Scientific Review Committee Member</div>
+                                    <p>Evaluated research proposals and projects related to geohazards, seismicity, and environmental geology. Provided recommendations for funding allocations and project implementation strategies.</p>
+                                </div>
+                                <div class="committee-meta">
+                                    <div class="committee-duration">
+                                        <i class="far fa-calendar-alt"></i>
+                                        <span>2015 - Present</span>
+                                    </div>
+                                    <div class="committee-achievement">
+                                        <strong>Key Contribution:</strong> Reviewed over 50 major research proposals in geological sciences.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Affiliations Section -->
+                <h2>University Affiliations</h2>
+                <div class="affiliations-container">
+                    <!-- Affiliation 1 -->
+                    <div class="affiliation-card">
+                        <h3 class="university-name">Himachal Pradesh University</h3>
+                        <div class="position-title">Professor & Department Head, Geology</div>
+                        <div class="affiliation-dates">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2005 - 2023</span>
+                        </div>
+                        <p>Led the department through significant curriculum development and research expansion. Established new laboratories for seismic studies and environmental analysis.</p>
+                    </div>
+
+                    <!-- Affiliation 2 -->
+                    <div class="affiliation-card">
+                        <h3 class="university-name">Indian Institute of Technology, Roorkee</h3>
+                        <div class="position-title">Visiting Professor</div>
+                        <div class="affiliation-dates">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2012 - 2016</span>
+                        </div>
+                        <p>Collaborated with the Department of Earthquake Engineering on joint research projects focusing on Himalayan seismicity and related geological phenomena.</p>
+                    </div>
+
+                    <!-- Affiliation 3 -->
+                    <div class="affiliation-card">
+                        <h3 class="university-name">National Institute of Disaster Management</h3>
+                        <div class="position-title">Subject Matter Expert & Guest Faculty</div>
+                        <div class="affiliation-dates">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2010 - Present</span>
+                        </div>
+                        <p>Regular contributor to training programs for civil servants and disaster management professionals on geological aspects of natural hazards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Benefit from Decades of Expertise & Professional Network</h2>
+                <p class="cta-text">Prof. Mahajan brings not only his extensive knowledge but also connections to a vast network of geological professionals through these affiliations. Contact him today to discuss your consulting needs.</p>
+                <a href="contact.html" class="cta-btn">Schedule a Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Prof. A.K. Mahajan</h3>
+                    <p>Geological Consultation Services</p>
+                    <p>PhD Geology | 35+ Years of Academic & Field Experience</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>prof.akmahajan@example.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 98XXXXXXXX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Shimla, Himachal Pradesh, India</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <a href="#" target="_blank">LinkedIn Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Prof. Ambrish Kumar Mahajan. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile navigation toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileNavToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !mobileNavToggle.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

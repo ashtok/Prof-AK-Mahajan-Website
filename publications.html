@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications & Research | Prof. Ambrish Kumar Mahajan</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --terracotta: #A63A24;
+            --primary-slate: #596869;
+            --primary-sand: #D9C5B2;
+            --accent-green: #34623F;
+            --accent-blue: #1D3557;
+            --light-gray: #f5f5f5;
+            --mid-gray: #e0e0e0;
+            --dark-gray: #333333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--terracotta);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--terracotta);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        .page-header {
+            background-color: var(--primary-sand);
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Publications Page Specific Styles */
+        .research-focus {
+            margin-bottom: 3rem;
+            background-color: var(--light-gray);
+            padding: 2rem;
+            border-radius: 5px;
+        }
+
+        .research-focus h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--terracotta);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .filter-container {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--white);
+            border: 1px solid var(--mid-gray);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-container h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--primary-slate);
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-slate);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--mid-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .filter-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-primary {
+            background-color: var(--terracotta);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #8a3019;
+        }
+
+        .btn-secondary {
+            background-color: var(--mid-gray);
+            color: var(--dark-gray);
+        }
+
+        .btn-secondary:hover {
+            background-color: #d0d0d0;
+        }
+
+        .publications-list {
+            margin-bottom: 3rem;
+        }
+
+        .publication-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--mid-gray);
+            border-radius: 5px;
+            background-color: var(--white);
+            transition: box-shadow 0.3s;
+        }
+
+        .publication-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .publication-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .publication-meta {
+            color: var(--primary-slate);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .publication-year {
+            background-color: var(--terracotta);
+            color: var(--white);
+            padding: 0.3rem 0.6rem;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .publication-journal {
+            font-style: italic;
+        }
+
+        .publication-authors {
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-abstract {
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+            max-height: 4.8em;
+            /* Approximately 3 lines */
+            transition: max-height 0.3s ease;
+        }
+
+        .publication-abstract.expanded {
+            max-height: 1000px;
+            /* Large value to ensure full visibility */
+        }
+
+        .read-more {
+            color: var(--terracotta);
+            cursor: pointer;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .publication-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .publication-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        .publication-link i {
+            margin-right: 0.5rem;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
+        }
+
+        .tabs-container {
+            margin: 3rem 0;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--mid-gray);
+            margin-bottom: 2rem;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            color: var(--terracotta);
+            border-bottom: 2px solid var(--terracotta);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .dissertation-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid var(--mid-gray);
+            border-radius: 5px;
+            background-color: var(--white);
+        }
+
+        .dissertation-year {
+            min-width: 100px;
+            font-weight: 600;
+            color: var(--terracotta);
+        }
+
+        .dissertation-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .dissertation-student {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            border: 1px solid var(--mid-gray);
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: var(--primary-slate);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .project-date {
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-org {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--primary-slate);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .pagination button {
+            padding: 0.5rem 1rem;
+            margin: 0 0.25rem;
+            border: 1px solid var(--mid-gray);
+            background-color: var(--white);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button.active {
+            background-color: var(--terracotta);
+            color: var(--white);
+            border-color: var(--terracotta);
+        }
+
+        .pagination button:hover:not(.active) {
+            background-color: var(--light-gray);
+        }
+
+        footer {
+            background-color: var(--primary-slate);
+            color: var(--white);
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+            color: var(--primary-sand);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-sand);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 0.75rem;
+            color: var(--primary-sand);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 1rem 0;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--mid-gray);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .dissertation-item {
+                flex-direction: column;
+            }
+
+            .dissertation-year {
+                margin-bottom: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Citation modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 5px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--terracotta);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+
+        .citation-formats {
+            margin-bottom: 1.5rem;
+        }
+
+        .citation-tab {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .citation-tab.active {
+            background-color: var(--terracotta);
+            color: var(--white);
+        }
+
+        .citation-content {
+            display: none;
+            padding: 1rem;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .citation-content.active {
+            display: block;
+        }
+
+        .copy-btn {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .copy-btn:hover {
+            background-color: #152a45;
+        }
+
+        .copy-message {
+            display: none;
+            color: var(--accent-green);
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/api/placeholder/50/50" alt="Prof. Mahajan Logo">
+                    <h1>Prof. Ambrish Kumar Mahajan</h1>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Expertise & Services</a></li>
+                        <li><a href="publications.html" class="active">Publications</a></li>
+                        <li><a href="memberships.html">Memberships</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Publications & Research</h1>
+            <p>Explore Prof. Mahajan's extensive research contributions in geological sciences, spanning seismic hazard
+                assessment, disaster management, and environmental sciences.</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="research-focus">
+            <h2>Research Focus Areas</h2>
+            <p>Prof. Mahajan's research has primarily focused on understanding geological hazards and their mitigation
+                strategies, with particular emphasis on seismic activity in the Himalayan region. His work combines
+                field investigation, laboratory analysis, and computational modeling to develop comprehensive approaches
+                to geological risk assessment and management.</p>
+            <p>Key research themes include:</p>
+            <ul>
+                <li>Seismic microzonation and hazard assessment</li>
+                <li>Landslide susceptibility mapping and monitoring</li>
+                <li>Environmental impact of geological processes</li>
+                <li>GIS applications in disaster management</li>
+                <li>Hydrogeological studies in mountain environments</li>
+            </ul>
+        </section>
+
+        <section class="filter-container">
+            <h3>Filter Publications</h3>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="publicationType">Publication Type</label>
+                    <select id="publicationType">
+                        <option value="all">All Types</option>
+                        <option value="journal">Journal Articles</option>
+                        <option value="conference">Conference Papers</option>
+                        <option value="book">Books & Chapters</option>
+                        <option value="report">Technical Reports</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="topic">Topic Area</label>
+                    <select id="topic">
+                        <option value="all">All Topics</option>
+                        <option value="seismic">Seismic Hazard</option>
+                        <option value="landslide">Landslides</option>
+                        <option value="environmental">Environmental Geology</option>
+                        <option value="disaster">Disaster Management</option>
+                        <option value="hydro">Hydrogeology</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="yearRange">Year Range</label>
+                    <select id="yearRange">
+                        <option value="all">All Years</option>
+                        <option value="recent">Last 5 Years</option>
+                        <option value="2020s">2020-Present</option>
+                        <option value="2010s">2010-2019</option>
+                        <option value="2000s">2000-2009</option>
+                        <option value="1990s">1990-1999</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="search">Search</label>
+                    <input type="text" id="search" placeholder="Search keywords...">
+                </div>
+            </div>
+            <div class="filter-actions">
+                <button class="btn btn-secondary" id="resetFilters">Reset Filters</button>
+                <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+            </div>
+        </section>
+
+        <section class="publications-list">
+            <h2>Journal Publications</h2>
+            <div class="publication-item">
+                <div class="publication-header">
+                    <div>
+                        <h3 class="publication-title">Seismic Microzonation of Dharamshala Town, Himachal Pradesh
+                            (India): An Evaluation for Future Earthquakes</h3>
+                        <div class="publication-meta">
+                            <div class="publication-authors">Mahajan, A.K., Thakur, V.C., Sharma, M.L. & Chauhan, M.
+                            </div>
+                            <div class="publication-journal">Journal of Seismology, 24(2), 331-349</div>
+                        </div>
+                    </div>
+                    <div class="publication-year">2022</div>
+                </div>
+                <div class="publication-abstract" id="abstract1">
+                    This study presents a comprehensive seismic microzonation framework for Dharamshala town, located in
+                    the seismically active Himalayan region. Using a multi-parameter approach incorporating geological,
+                    geomorphological, and geotechnical data, we developed hazard maps highlighting areas susceptible to
+                    amplified ground motion during seismic events. The results indicate substantial variation in seismic
+                    response across different geological formations, with implications for urban planning and disaster
+                    preparedness.
+                </div>
+                <span class="read-more" data-target="abstract1">Read More</span>
+                <div class="publication-actions">
+                    <a href="#" class="publication-link"
+                        onclick="openCitationModal('Seismic Microzonation of Dharamshala Town')"><i
+                            class="fas fa-quote-left"></i>Cite</a>
+                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i>DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i>PDF</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-header">
+                    <div>
+                        <h3 class="publication-title">GIS-based Landslide Susceptibility Mapping and Assessment: A Case
+                            Study from the Northwest Himalaya, India</h3>
+                        <div class="publication-meta">
+                            <div class="publication-authors">Mahajan, A.K., Singh, S., Kumar, N. & Chauhan, G.</div>
+                            <div class="publication-journal">Environmental Earth Sciences, 79(15), 1-18</div>
+                        </div>
+                    </div>
+                    <div class="publication-year">2020</div>
+                </div>
+                <div class="publication-abstract" id="abstract2">
+                    This paper presents a GIS-based methodology for landslide susceptibility mapping in the tectonically
+                    active Northwest Himalayan region. Utilizing analytical hierarchy process (AHP) and weighted overlay
+                    analysis, we integrated multiple causative factors including slope, aspect, lithology, drainage, and
+                    land use to generate comprehensive susceptibility maps. Field validation demonstrated high accuracy
+                    of the predictive model, providing a valuable tool for hazard mitigation and land-use planning in
+                    mountainous regions prone to landslides.
+                </div>
+                <span class="read-more" data-target="abstract2">Read More</span>
+                <div class="publication-actions">
+                    <a href="#" class="publication-link"
+                        onclick="openCitationModal('GIS-based Landslide Susceptibility Mapping')"><i
+                            class="fas fa-quote-left"></i>Cite</a>
+                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i>DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i>PDF</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-header">
+                    <div>
+                        <h3 class="publication-title">Hydrogeological Characterization and Groundwater Potential
+                            Assessment in Mountainous Terrain of Himachal Pradesh, India</h3>
+                        <div class="publication-meta">
+                            <div class="publication-authors">Mahajan, A.K., Sharma, R.K. & Kumar, P.</div>
+                            <div class="publication-journal">Hydrogeology Journal, 28(4), 1295-1311</div>
+                        </div>
+                    </div>
+                    <div class="publication-year">2019</div>
+                </div>
+                <div class="publication-abstract" id="abstract3">
+                    This research investigates groundwater dynamics in the complex hydrogeological setting of the
+                    Himalayan mountains. Through integrated analysis of geological structures, lithological variations,
+                    and hydrological parameters, we identified potential groundwater zones and developed a conceptual
+                    model for groundwater flow in folded and faulted terrain. The study provides insights into
+                    sustainable groundwater management strategies for mountainous regions facing increasing water
+                    scarcity due to climate change and growing anthropogenic pressures.
+                </div>
+                <span class="read-more" data-target="abstract3">Read More</span>
+                <div class="publication-actions">
+                    <a href="#" class="publication-link"
+                        onclick="openCitationModal('Hydrogeological Characterization')"><i
+                            class="fas fa-quote-left"></i>Cite</a>
+                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i>DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i>PDF</a>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-header">
+                    <div>
+                        <h3 class="publication-title">Assessment of Environmental Impacts of Limestone Mining in the
+                            Lesser Himalaya: A Case Study from Himachal Pradesh, India</h3>
+                        <div class="publication-meta">
+                            <div class="publication-authors">Mahajan, A.K., Gupta, V. & Das, A.</div>
+                            <div class="publication-journal">Environmental Monitoring and Assessment, 191(2), 71</div>
+                        </div>
+                    </div>
+                    <div class="publication-year">2018</div>
+                </div>
+                <div class="publication-abstract" id="abstract4">
+                    This study evaluates the environmental consequences of limestone mining activities in the
+                    ecologically sensitive Lesser Himalayan region. Through multi-temporal satellite imagery analysis
+                    and field-based environmental quality assessments, we documented significant landscape alterations,
+                    habitat fragmentation, and deterioration of air and water quality in mining-affected areas. The
+                    research highlights the need for stringent environmental regulations and restoration strategies to
+                    mitigate the adverse impacts of mining on fragile mountain ecosystems.
+                </div>
+                <span class="read-more" data-target="abstract4">Read More</span>
+                <div class="publication-actions">
+                    <a href="#" class="publication-link"
+                        onclick="openCitationModal('Assessment of Environmental Impacts')"><i
+                            class="fas fa-quote-left"></i>Cite</a>
+                    <a href="#" class="publication-link"><i class="fas fa-external-link-alt"></i>DOI</a>
+                    <a href="#" class="publication-link"><i class="fas fa-file-pdf"></i>PDF</a>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button>1</button>
+                <button class="active">2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="tabs-container">
+            <h2>Supervised Research</h2>
+            <div class="tabs">
+                <button class="tab active" data-tab="phd">Ph.D. Dissertations</button>
+                <button class="tab" data-tab="msc">M.Sc. Dissertations</button>
+            </div>
+
+            <div class="tab-content active" id="phd">
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2022</div>
+                    <div class="dissertation-info">
+                        <h4>Integrated Approach for Landslide Hazard Assessment and Mapping in the Northwest Himalaya
+                        </h4>
+                        <div class="dissertation-student">Student: Dr. Neelam Sharma</div>
+                        <p>This dissertation developed a multi-criteria decision analysis framework for comprehensive
+                            landslide hazard assessment in the tectonically active Himalayan terrain. Combining remote
+                            sensing, GIS techniques, and field investigations, the research produced high-resolution
+                            hazard maps that achieved over 85% prediction accuracy when validated against historical
+                            landslide inventories. The methodology has been adopted by regional disaster management
+                            authorities for landslide risk reduction planning.</p>
+                    </div>
+                </div>
+
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2020</div>
+                    <div class="dissertation-info">
+                        <h4>Seismic Response Analysis and Microzonation of Urban Areas in the Himalayan Foothills</h4>
+                        <div class="dissertation-student">Student: Dr. Rohit Kumar</div>
+                        <p>This research conducted a detailed investigation of site-specific seismic response
+                            characteristics in rapidly urbanizing areas of the Himalayan foothills. Using microtremor
+                            measurements, shallow geophysical surveys, and geotechnical testing, the study identified
+                            areas susceptible to seismic amplification and developed microzonation maps for urban
+                            planning. The dissertation included recommendations for building codes tailored to local
+                            geological conditions to enhance earthquake resilience.</p>
+                    </div>
+                </div>
+
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2018</div>
+                    <div class="dissertation-info">
+                        <h4>Hydrogeological Investigation and Groundwater Quality Assessment in Tectonically Active
+                            Mountain Watersheds</h4>
+                        <div class="dissertation-student">Student: Dr. Priyanka Sharma</div>
+                        <p>This dissertation examined the complex hydrogeological systems in the Himalayan region,
+                            focusing on groundwater quality, recharge mechanisms, and vulnerability to contamination.
+                            Employing isotopic tracers, hydrochemical analysis, and numerical modeling, the research
+                            elucidated groundwater flow paths and residence times in fractured aquifer systems. The
+                            findings contributed to the development of watershed management strategies for sustainable
+                            groundwater utilization in mountain environments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="msc">
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2023</div>
+                    <div class="dissertation-info">
+                        <h4>Assessment of Flash Flood Hazards in Mountain Streams Using Geomorphological Indicators</h4>
+                        <div class="dissertation-student">Student: Vikram Singh</div>
+                        <p>This study developed a methodology for evaluating flash flood susceptibility in mountain
+                            watersheds based on geomorphological parameters and precipitation patterns. Field mapping,
+                            hydrological analysis, and historical records were integrated to categorize stream reaches
+                            according to flood hazard levels. The research produced actionable guidelines for local
+                            authorities to prioritize flood mitigation measures.</p>
+                    </div>
+                </div>
+
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2022</div>
+                    <div class="dissertation-info">
+                        <h4>Mapping and Monitoring of Active Faults Using Remote Sensing and Geomorphic Analysis</h4>
+                        <div class="dissertation-student">Student: Anisha Gupta</div>
+                        <p>This dissertation employed high-resolution satellite imagery and digital elevation models to
+                            identify and characterize active faults in the seismically dynamic Himalayan region.
+                            Geomorphic indices including mountain front sinuosity, valley floor width-to-height ratio,
+                            and stream length gradient were calculated to assess relative tectonic activity. The
+                            research contributed to enhanced understanding of earthquake potential in poorly studied
+                            fault segments.</p>
+                    </div>
+                </div>
+
+                <div class="dissertation-item">
+                    <div class="dissertation-year">2021</div>
+                    <div class="dissertation-info">
+                        <h4>Evaluation of Climate Change Impacts on Glacial Lake Outburst Flood Hazards</h4>
+                        <div class="dissertation-student">Student: Ravi Kant</div>
+                        <p>This study investigated the increasing risk of glacial lake outburst floods (GLOFs) in the
+                            Himalayan region due to accelerated glacial retreat. Multi-temporal satellite imagery
+                            analysis documented lake expansion trends, while field surveys and dam stability assessments
+                            identified potentially dangerous glacial lakes. The research produced hazard maps
+                            highlighting vulnerable downstream communities and infrastructure, contributing to early
+                            warning system development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Notable Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Hazard Risk Assessment for the Himalayan Region</h3>
+                        <div class="project-date">2020-2023</div>
+                        <div class="project-org">Funded by: National Disaster Management Authority</div>
+                        <p>A comprehensive evaluation of multiple geological hazards including earthquakes, landslides,
+                            and flash floods to develop integrated risk assessment methodologies. The project produced
+                            hazard maps and vulnerability assessments for five districts, directly informing disaster
+                            management planning at regional and local levels.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Seismic Microzonation of Urban Centers in the Northwestern Himalaya
+                        </h3>
+                        <div class="project-date">2018-2021</div>
+                        <div class="project-org">Funded by: Ministry of Earth Sciences</div>
+                        <p>Detailed characterization of seismic hazards in rapidly growing urban areas through
+                            geophysical surveys, geotechnical investigations, and ground motion modeling. The project
+                            delivered site-specific seismic amplification maps that have been incorporated into urban
+                            development plans and building regulations.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Climate Change Impacts on Mountain Hydrology</h3>
+                        <div class="project-date">2016-2019</div>
+                        <div class="project-org">Funded by: Department of Science and Technology</div>
+                        <p>Investigation of changing hydrological regimes in Himalayan watersheds under climate change
+                            scenarios. The project utilized field monitoring, isotopic tracing, and hydrological
+                            modeling to predict shifts in water availability, affecting agriculture, hydropower, and
+                            domestic water supply. Policy recommendations were developed for adaptive water management
+                            strategies.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Landslide Early Warning System Development</h3>
+                        <div class="project-date">2015-2018</div>
+                        <div class="project-org">Funded by: International Cooperation Program</div>
+                        <p>A collaborative international project to develop and implement a community-based landslide
+                            early warning system in landslide-prone regions. The project combined technical monitoring
+                            equipment with local knowledge networks to create effective warning communication channels,
+                            resulting in successful evacuation during multiple landslide events.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Citation Modal -->
+    <div class="modal" id="citationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Citation</h3>
+                <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="citation-formats">
+                <button class="citation-tab active" data-format="apa">APA</button>
+                <button class="citation-tab" data-format="mla">MLA</button>
+                <button class="citation-tab" data-format="chicago">Chicago</button>
+                <button class="citation-tab" data-format="harvard">Harvard</button>
+            </div>
+            <div class="citation-content active" id="apa-citation">
+                <p id="apa-text">Mahajan, A.K., Thakur, V.C., Sharma, M.L. & Chauhan, M. (2022). Seismic Microzonation
+                    of Dharamshala Town, Himachal Pradesh (India): An Evaluation for Future Earthquakes. Journal of
+                    Seismology, 24(2), 331-349. https://doi.org/10.1007/s10950-022-10085-w</p>
+            </div>
+            <div class="citation-content" id="mla-citation">
+                <p id="mla-text">Mahajan, Ambrish Kumar, et al. "Seismic Microzonation of Dharamshala Town, Himachal
+                    Pradesh (India): An Evaluation for Future Earthquakes." Journal of Seismology, vol. 24, no. 2, 2022,
+                    pp. 331-349.</p>
+            </div>
+            <div class="citation-content" id="chicago-citation">
+                <p id="chicago-text">Mahajan, Ambrish Kumar, Vinod C. Thakur, Mukat L. Sharma, and Manoj Chauhan. 2022.
+                    "Seismic Microzonation of Dharamshala Town, Himachal Pradesh (India): An Evaluation for Future
+                    Earthquakes." Journal of Seismology 24 (2): 331-349.</p>
+            </div>
+            <div class="citation-content" id="harvard-citation">
+                <p id="harvard-text">Mahajan, A.K., Thakur, V.C., Sharma, M.L. & Chauhan, M., 2022. Seismic
+                    Microzonation of Dharamshala Town, Himachal Pradesh (India): An Evaluation for Future Earthquakes.
+                    Journal of Seismology, 24(2), pp.331-349.</p>
+            </div>
+            <button class="copy-btn" id="copyBtn">
+                <i class="fas fa-copy"></i> Copy Citation
+            </button>
+            <div class="copy-message" id="copyMessage">Citation copied to clipboard!</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Seismic Hazard Assessment</a></li>
+                        <li><a href="services.html">Disaster Management</a></li>
+                        <li><a href="services.html">Environmental Sciences</a></li>
+                        <li><a href="services.html">Geological Mapping</a></li>
+                        <li><a href="services.html">Academic Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contact">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-envelope"></i> prof.mahajan@example.com</p>
+                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Himachal Pradesh, India</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Ambrish Kumar Mahajan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function () {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Read More Toggle
+        document.querySelectorAll('.read-more').forEach(button => {
+            button.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const abstractElement = document.getElementById(targetId);
+                abstractElement.classList.toggle('expanded');
+                this.textContent = abstractElement.classList.contains('expanded') ? 'Read Less' : 'Read More';
+            });
+        });
+
+        // Tab Switching for Supervised Research
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all tab content
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // Show the corresponding tab content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Citation Modal Functions
+        const modal = document.getElementById('citationModal');
+        const closeModal = document.getElementById('closeModal');
+
+        function openCitationModal(title) {
+            modal.style.display = 'flex';
+            // Here you would typically update the citation text based on the publication
+            // For demonstration, we'll just use the existing text
+        }
+
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        // Click outside modal to close
+        window.addEventListener('click', function (event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Citation Format Tabs
+        document.querySelectorAll('.citation-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active class from all tabs
+                document.querySelectorAll('.citation-tab').forEach(t => t.classList.remove('active'));
+
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all citation content
+                document.querySelectorAll('.citation-content').forEach(content => content.classList.remove('active'));
+
+                // Show the corresponding citation content
+                const format = this.getAttribute('data-format');
+                document.getElementById(`${format}-citation`).classList.add('active');
+            });
+        });
+
+        // Copy Citation Button
+        document.getElementById('copyBtn').addEventListener('click', function () {
+            // Get active citation format
+            const activeFormat = document.querySelector('.citation-tab.active').getAttribute('data-format');
+            const citationText = document.getElementById(`${activeFormat}-text`).textContent;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(citationText).then(function () {
+                // Show copied message
+                const copyMessage = document.getElementById('copyMessage');
+                copyMessage.style.display = 'block';
+
+                // Hide after 2 seconds
+                setTimeout(function () {
+                    copyMessage.style.display = 'none';
+                }, 2000);
+            });
+        });
+
+        // Filter Publications (would be implemented with actual data in a real application)
+        document.getElementById('applyFilters').addEventListener('click', function () {
+            // In a real implementation, this would filter the publications based on selected criteria
+            alert('In a production environment, this would filter the publications based on your selected criteria.');
+        });
+
+        document.getElementById('resetFilters').addEventListener('click', function () {
+            // Reset all filter fields
+            document.getElementById('publicationType').value = 'all';
+            document.getElementById('topic').value = 'all';
+            document.getElementById('yearRange').value = 'all';
+            document.getElementById('search').value = '';
+        });
+
+        // Pagination (would be implemented with actual data in a real application)
+        document.querySelectorAll('.pagination button').forEach(button => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.pagination button').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // In a real implementation, this would load the corresponding page of publications
+            });
+        });
+    </script>
+</body>
+
+</html>
