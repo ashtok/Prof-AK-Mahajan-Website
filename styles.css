@@ -1,45 +1,3 @@
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-a {
-  text-decoration: none;
-  color: #1D3557;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  color: #A63A24;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* Color Scheme */
 :root {
   --terracotta: #A63A24;
@@ -56,6 +14,79 @@ a:hover {
   --transition: all 0.3s ease;
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Open Sans', sans-serif;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--dark-gray); /* Fallback to #333 if --dark-text is not defined */
+  background-color: var(--light-gray); /* Fallback to #f8f8f8 if --light-bg is not defined */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+} 
+
+/* Heading Sizes & Customization */
+h1 {
+  font-size: 2.5rem;
+  color: var(--terracotta); /* Default to terracotta */
+}
+
+h2 {
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 80px;
+  background-color: var(--forest-green); /* Default to forest green */
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--deep-blue);
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--deep-blue);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--terracotta);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Button Styles */

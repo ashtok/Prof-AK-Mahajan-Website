@@ -13,62 +13,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Base Styles */
-        :root {
-            --terracotta: #A63A24;
-            --slate-gray: #596869;
-            --sand-beige: #D9C5B2;
-            --forest-green: #34623F;
-            --deep-blue: #1D3557;
-            --light-bg: #F8F5F2;
-            --dark-text: #333333;
-            --light-text: #FFFFFF;
-        }
-        
-        
-        body {
-            font-family: 'Open Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--dark-text);
-            background-color: var(--light-bg);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--terracotta);
-        }
-        
-        h2 {
-            font-size: 2rem;
-            color: var(--slate-gray);
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            color: var(--deep-blue);
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--deep-blue);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--terracotta);
-        }
-        
+        /* Base Styles */                
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -79,7 +24,7 @@
             display: inline-block;
             padding: 12px 24px;
             background-color: var(--terracotta);
-            color: var(--light-text);
+            color: var(--white);
             border: none;
             border-radius: 4px;
             font-family: 'Montserrat', sans-serif;
@@ -92,7 +37,7 @@
         
         .btn:hover {
             background-color: var(--deep-blue);
-            color: var(--light-text);
+            color: var(--white);
         }
         
         .btn-secondary {
@@ -135,14 +80,14 @@
         /* Page Title Section */
         .page-title {
             background-color: var(--slate-gray);
-            color: var(--light-text);
+            color: var(--white);
             padding: 60px 0;
             text-align: center;
             position: relative;
         }
         
         .page-title h1 {
-            color: var(--light-text);
+            color: var(--white);
             margin-bottom: 10px;
         }
         
@@ -172,7 +117,7 @@
         }
         
         .service-card {
-            background-color: var(--light-text);
+            background-color: var(--white);
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -252,7 +197,7 @@
             width: 60px;
             height: 60px;
             background-color: var(--terracotta);
-            color: var(--light-text);
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -308,7 +253,7 @@
         }
         
         .industry-card {
-            background-color: var(--light-text);
+            background-color: var(--white);
             border-radius: 8px;
             padding: 30px;
             text-align: center;
@@ -329,7 +274,7 @@
         /* CTA Section */
         .cta-section {
             background-color: var(--deep-blue);
-            color: var(--light-text);
+            color: var(--white);
             padding: 80px 0;
             text-align: center;
         }
@@ -340,7 +285,7 @@
         }
         
         .cta-section h2 {
-            color: var(--light-text);
+            color: var(--white);
             margin-bottom: 20px;
         }
         
@@ -352,7 +297,7 @@
         /* Footer */
         footer {
             background-color: var(--slate-gray);
-            color: var(--light-text);
+            color: var(--white);
             padding: 60px 0 20px;
         }
         
@@ -364,7 +309,7 @@
         }
         
         .footer-col h3 {
-            color: var(--light-text);
+            color: var(--white);
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
@@ -382,7 +327,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--light-text);
+            color: var(--white);
         }
         
         .footer-contact p {
@@ -422,7 +367,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: var(--light-text);
+                background-color: var(--white);
                 padding: 20px;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
             }
