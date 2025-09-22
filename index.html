@@ -3,193 +3,1320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prof. Ambrish Kumar Mahajan | Geological Consultation Services</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Prof. A.K. Mahajan - Leading Geological Consultant & Disaster Management Expert</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-gold: #f59e0b;
+            --accent-blue: #3b82f6;
+            --text-light: #64748b;
+            --text-dark: #0f172a;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header & Hero */
+        .header {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><path d="M0,300 C200,200 400,350 600,250 C800,150 1000,300 1200,200 L1200,400 L0,400 Z" fill="url(%23grad)" fill-opacity="0.1"/><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23f59e0b"/><stop offset="100%" style="stop-color:%233b82f6"/></linearGradient></defs></svg>') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .float-item {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-blue));
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .float-item:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-delay: 0s; }
+        .float-item:nth-child(2) { width: 120px; height: 120px; top: 60%; right: 15%; animation-delay: 5s; }
+        .float-item:nth-child(3) { width: 60px; height: 60px; bottom: 30%; left: 20%; animation-delay: 10s; }
+        .float-item:nth-child(4) { width: 100px; height: 100px; top: 40%; right: 30%; animation-delay: 15s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-40px) rotate(180deg); }
+            75% { transform: translateY(-20px) rotate(270deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: var(--white);
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge::before {
+            content: '🏆';
+            font-size: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            color: #cbd5e1;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f97316 100%);
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-50);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .credentials-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credentials-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+        }
+
+        .credentials-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .credential-icon {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .award-highlight {
+            background: linear-gradient(135deg, var(--accent-gold), #f97316);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(245, 158, 11, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .award-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-blue);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Himalayan Expertise Section */
+        .himalayan-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .himalayan-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200"><path d="M0,100 C300,20 600,180 900,60 C1050,10 1150,80 1200,40 L1200,200 L0,200 Z" fill="%23ffffff" fill-opacity="0.03"/></svg>') repeat-x bottom;
+            background-size: 1200px 200px;
+        }
+
+        .himalayan-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .himalayan-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--white) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: var(--gray-50);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-gold));
+            padding: 1.5rem 2rem;
+            color: var(--white);
+        }
+
+        .project-category {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .contact-item h3 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">Prof.<span>Mahajan</span></div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="memberships.html">Memberships</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">Prof. A.K. Mahajan</a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#expertise">Himalayan Expertise</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Prof. Ambrish Kumar Mahajan</h1>
-            <p style="margin-bottom: 20px;">Ph.D. Geology | 35+ Years Experience | Seismic Hazard Specialist</p>
-            <a href="#" class="btn btn-primary">Schedule a Consultation</a>
+    <section id="home" class="header">
+        <div class="floating-elements">
+            <div class="float-item"></div>
+            <div class="float-item"></div>
+            <div class="float-item"></div>
+            <div class="float-item"></div>
         </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section class="expertise">
+        
         <div class="container">
-            <div class="section-title">
-                <h2>Areas of Expertise</h2>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>Seismic Hazard Assessment</h3>
-                        <p>Comprehensive evaluation of earthquake risks and potential ground motion in diverse geological settings, with special focus on Himalayan tectonics.</p>
-                        <a href="#" class="expertise-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-house-damage"></i>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>Disaster Management</h3>
-                        <p>Strategic planning and implementation of disaster mitigation measures, with expertise in landslide assessment and prevention techniques.</p>
-                        <a href="#" class="expertise-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="expertise-content">
-                        <h3>Environmental Sciences</h3>
-                        <p>Analysis of environmental impacts of geological phenomena, sustainable resource management, and eco-friendly development strategies.</p>
-                        <a href="#" class="expertise-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+            <div class="hero-content">
+                <div class="hero-badge">National Geoscience Award Winner 2017</div>
+                
+                <h1 class="hero-title">Prof. A.K. Mahajan</h1>
+                
+                <p class="hero-subtitle">Leading Geological Consultant & Disaster Management Expert</p>
+                
+                <p class="hero-description">
+                    Pioneering geological solutions across the Himalayas with 35+ years of expertise in seismic risk assessment, landslide mitigation, and disaster management. Trusted by governments and institutions worldwide.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">
+                        📞 Schedule Consultation
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        🔍 View Projects
+                    </a>
                 </div>
             </div>
         </div>
+        
+        <div class="scroll-indicator">
+            <div style="font-size: 2rem;">↓</div>
+            <div style="font-size: 0.875rem;">Scroll to explore</div>
+        </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- About Section -->
+    <section id="about" class="section about">
         <div class="container">
-            <div class="section-title">
-                <h2>Testimonials</h2>
+            <div class="section-header">
+                <div class="section-badge">Distinguished Expert</div>
+                <h2 class="section-title">About Prof. Mahajan</h2>
+                <p class="section-subtitle">
+                    Three and a half decades of groundbreaking research and consultancy in geological sciences and disaster management
+                </p>
             </div>
-            <div class="testimonial-carousel">
-                <div class="testimonial-slide">
-                    <p class="testimonial-quote">Prof. Mahajan's expertise in seismic hazard assessment was invaluable for our infrastructure project in the Himalayan region. His insights helped us develop robust safety protocols.</p>
-                    <div class="testimonial-author">Dr. Rajesh Sharma</div>
-                    <div class="testimonial-position">Director, National Infrastructure Development</div>
+
+            <div class="about-grid fade-in">
+                <div class="credentials-card">
+                    <h3>Academic Excellence & Credentials</h3>
+                    
+                    <div class="credential-item">
+                        <div class="credential-icon">🎓</div>
+                        <div>
+                            <strong>Ph.D. in Seismotectonics</strong><br>
+                            <span style="color: var(--text-light);">Specialized doctoral research in earthquake science</span>
+                        </div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <div class="credential-icon">🌍</div>
+                        <div>
+                            <strong>Diploma in Disaster Management</strong><br>
+                            <span style="color: var(--text-light);">University of Geneva, Switzerland</span>
+                        </div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <div class="credential-icon">🔬</div>
+                        <div>
+                            <strong>Postdoctoral Fellowship</strong><br>
+                            <span style="color: var(--text-light);">ITC, Netherlands</span>
+                        </div>
+                    </div>
+                    
+                    <div class="credential-item">
+                        <div class="credential-icon">🏛️</div>
+                        <div>
+                            <strong>Former Scientist & Professor</strong><br>
+                            <span style="color: var(--text-light);">Wadia Institute & Central University of HP</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Additional testimonials would be controlled via JavaScript -->
+
+                <div class="about-text">
+                    <p>
+                        Prof. Ambrish Kumar Mahajan stands as one of India's most distinguished geological consultants, with an unparalleled career spanning over 35 years in academic research, field investigations, and high-stakes consultancy projects.
+                    </p>
+                    
+                    <p>
+                        His expertise in the complex and challenging Himalayan terrains has made him the go-to consultant for governments, international organizations, and research institutions seeking solutions for earthquake risk reduction, seismic hazard assessment, and comprehensive landslide management strategies.
+                    </p>
+                    
+                    <p>
+                        From advising on critical infrastructure projects to training disaster management professionals, Prof. Mahajan's work directly contributes to building safer, more resilient communities across the most geologically active regions in the world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="award-highlight fade-in">
+                <div class="award-content">
+                    <div class="award-icon">🏆</div>
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">National Geoscience Award 2017</h3>
+                    <p style="font-size: 1.2rem; margin: 0;">
+                        Recognized by the Government of India for exceptional contributions to applied geology and disaster risk management
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Recent Publications Section -->
-    <section class="publications">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Recent Publications</h2>
+            <div class="section-header">
+                <div class="section-badge">Comprehensive Solutions</div>
+                <h2 class="section-title">Specialized Consultancy Services</h2>
+                <p class="section-subtitle">
+                    Delivering world-class geological and disaster management solutions tailored to your project needs
+                </p>
             </div>
-            <div class="publications-grid">
-                <div class="publication-card">
-                    <div class="publication-content">
-                        <h3>Seismic Vulnerability Assessment of the Western Himalayan Region</h3>
-                        <div class="publication-meta">Journal of Geological Research, 2023</div>
-                        <p class="publication-excerpt">A comprehensive analysis of seismic patterns and vulnerability mapping for urban centers in the Western Himalayan belt.</p>
-                        <a href="#" class="expertise-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🌋</div>
+                    <h3>Disaster Risk Management</h3>
+                    <ul class="service-list">
+                        <li>Comprehensive seismic hazard assessment & microzonation</li>
+                        <li>Advanced landslide risk evaluation & mitigation planning</li>
+                        <li>Disaster preparedness training for institutions & agencies</li>
+                        <li>Critical infrastructure risk assessment</li>
+                        <li>Emergency response planning & implementation</li>
+                        <li>Multi-hazard vulnerability studies</li>
+                    </ul>
                 </div>
-                <div class="publication-card">
-                    <div class="publication-content">
-                        <h3>Environmental Impact of Landslides: Case Studies from Northern India</h3>
-                        <div class="publication-meta">Environmental Geology, 2022</div>
-                        <p class="publication-excerpt">Detailed examination of environmental consequences resulting from major landslide events in Northern India over the past decade.</p>
-                        <a href="#" class="expertise-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔬</div>
+                    <h3>Geological & Environmental Studies</h3>
+                    <ul class="service-list">
+                        <li>Advanced subsurface investigations (MASW, GPR, HVSR)</li>
+                        <li>Hydrological and environmental impact assessments</li>
+                        <li>Specialized risk assessment for dams, highways & bridges</li>
+                        <li>Detailed geological mapping and terrain analysis</li>
+                        <li>Hydrogeochemical studies and watershed analysis</li>
+                        <li>Slope stability analysis in fragile terrains</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="view-all-btn">
-                <a href="#" class="btn btn-secondary">View All Publications</a>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">📋</div>
+                    <h3>Policy & Training Support</h3>
+                    <ul class="service-list">
+                        <li>Strategic advisory for disaster management authorities</li>
+                        <li>Technical evaluation of DPRs (Detailed Project Reports)</li>
+                        <li>Professional training workshops for officials & engineers</li>
+                        <li>Policy recommendations for sustainable development</li>
+                        <li>Expert witness services and technical testimony</li>
+                        <li>Institutional capacity building programs</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
+    <!-- Himalayan Expertise Section -->
+    <section id="expertise" class="section himalayan-section">
         <div class="container">
-            <h2>Seeking Expert Geological Consultation?</h2>
-            <p>With over three decades of experience in geological sciences, I provide specialized consultation services tailored to your specific needs.</p>
-            <a href="#" class="btn btn-primary">Contact Prof. Mahajan</a>
+            <div class="himalayan-content">
+                <div class="section-header">
+                    <div class="section-badge" style="background: rgba(255,255,255,0.2); color: white;">🏔️ Regional Specialization</div>
+                    <h2 class="himalayan-title">Himalayan Geology Expert</h2>
+                    <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                        Unmatched expertise in the world's most challenging and geologically complex mountain terrain
+                    </p>
+                </div>
+
+                <div class="stats-grid fade-in">
+                    <div class="stat-card">
+                        <span class="stat-number">35+</span>
+                        <span class="stat-label">Years of Himalayan Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">80+</span>
+                        <span class="stat-label">Research Publications</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Major Consultancy Projects</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Himalayan States Covered</span>
+                    </div>
+                </div>
+
+                <div style="max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.8; opacity: 0.9;">
+                    <p>
+                        For over three decades, Prof. Mahajan has been at the forefront of geological research and consultancy in the Himalayan region, providing critical expertise to governments, military establishments, and local authorities across <strong>Himachal Pradesh, Uttarakhand, Jammu & Kashmir, Assam, and the broader Himalayan arc</strong>.
+                    </p>
+                    <br>
+                    <p>
+                        His specialized knowledge in landslide mitigation, seismic hazard evaluation, and disaster risk reduction has directly contributed to safer infrastructure development and community resilience in some of the world's most geologically challenging environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Proven Track Record</div>
+                <h2 class="section-title">Key Consultancy & Research Projects</h2>
+                <p class="section-subtitle">
+                    Delivering impactful solutions across government, institutional, and private sector projects
+                </p>
+            </div>
+
+            <h3 style="color: var(--accent-gold); font-size: 2rem; text-align: center; margin-bottom: 2rem; font-weight: 700;">
+                🏔️ Himalayan Focused Projects
+            </h3>
+
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">HIMACHAL PRADESH • 2023</div>
+                        <h3 class="project-title">Landslide Risk Assessment - Dharamsala Region</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Comprehensive landslide hazard and risk zonation covering Dharamsala and surrounding areas, including specialized vulnerability assessment for Military Station infrastructure and strategic installations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">PUNJAB & HARYANA • 2021-2024</div>
+                        <h3 class="project-title">Seismic Microzonation - Chandigarh Tri-City</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Major MoES-funded initiative covering detailed seismic microzonation of Chandigarh, Mohali, and Panchkula. Critical for urban planning and building codes in this major metropolitan region.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">HIMACHAL PRADESH • ONGOING</div>
+                        <h3 class="project-title">Multi-District Landslide Consultation</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Extensive consultancy covering landslide-prone areas across Kangra and Chamba districts, providing actionable mitigation strategies for local administration and community safety.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--accent-gold); font-size: 2rem; text-align: center; margin: 4rem 0 2rem 0; font-weight: 700;">
+                🌍 National & International Projects
+            </h3>
+
+            <div class="projects-grid fade-in">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">INTERNATIONAL • NORWAY PARTNERSHIP</div>
+                        <h3 class="project-title">Earthquake Risk Reduction in Himalaya</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Groundbreaking international collaboration with NORSAR, Norway (2009-2014) focusing on comprehensive earthquake risk assessment and innovative mitigation strategies across the Himalayan arc.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">ASSAM • INFRASTRUCTURE</div>
+                        <h3 class="project-title">NHPC Subansiri Lower Hydropower Project</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Critical seismic design parameter consultancy for one of India's largest hydropower projects, ensuring structural integrity in highly seismic terrain of Northeast India.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-category">HIMACHAL PRADESH • DAM SAFETY</div>
+                        <h3 class="project-title">Pong Dam Environmental & Risk Studies</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">
+                            Comprehensive environmental impact and risk assessment for major dam infrastructure, including detailed analysis of catchment erosion and long-term stability factors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge" style="background: var(--accent-gold); color: white;">Ready to Collaborate</div>
+                <h2 class="section-title" style="color: white;">Start Your Project Today</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">
+                    Connect with Prof. Mahajan for expert geological consultancy and disaster management solutions
+                </p>
+            </div>
+
+            <div class="contact-grid fade-in">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📞 Direct Contact</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            <strong>Primary:</strong> +91-9412348086<br>
+                            <strong>Alternate:</strong> +91-9418648086<br>
+                            <strong>Email:</strong> contact@akmahajan.com
+                        </p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📍 Service Areas</h3>
+                        <p style="line-height: 1.8;">
+                            <strong>Primary Base:</strong> Himachal Pradesh & Dehradun<br>
+                            <strong>Expertise Regions:</strong> Pan-Himalayan<br>
+                            <strong>Availability:</strong> India & International Projects
+                        </p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>🎯 Ready For</h3>
+                        <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                            <li>✓ Government consultancy projects</li>
+                            <li>✓ Infrastructure risk assessments</li>
+                            <li>✓ Emergency geological evaluations</li>
+                            <li>✓ Training and capacity building</li>
+                            <li>✓ International collaborations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3 style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 2rem; text-align: center;">
+                        📬 Project Inquiry Form
+                    </h3>
+                    
+                    <form id="projectForm">
+                        <div class="form-group">
+                            <label for="organization">Organization/Company Name:</label>
+                            <input type="text" id="organization" name="organization" class="form-control" placeholder="Enter your organization name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-name">Contact Person:</label>
+                            <input type="text" id="contact-name" name="contact-name" class="form-control" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your.email@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Contact Number:</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91-XXXXXXXXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Project Type:</label>
+                            <select id="project-type" name="project-type" class="form-control" required>
+                                <option value="">Select project type</option>
+                                <option value="seismic">Seismic Assessment & Microzonation</option>
+                                <option value="landslide">Landslide Risk Evaluation</option>
+                                <option value="infrastructure">Infrastructure Risk Assessment</option>
+                                <option value="training">Training & Capacity Building</option>
+                                <option value="dpr">DPR Technical Review</option>
+                                <option value="environmental">Environmental Impact Assessment</option>
+                                <option value="other">Other (specify in details)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Project Location:</label>
+                            <input type="text" id="location" name="location" class="form-control" placeholder="City, State, Country" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timeline">Expected Timeline:</label>
+                            <input type="text" id="timeline" name="timeline" class="form-control" placeholder="e.g., 3 months, urgent, by March 2025">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="details">Project Details & Requirements:</label>
+                            <textarea id="details" name="details" class="form-control" rows="5" placeholder="Please describe your project scope, specific requirements, expected deliverables, and any other relevant information..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; font-size: 1.1rem;">
+                            🚀 Submit Project Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Seismic Hazard Assessment</a></li>
-                        <li><a href="#">Disaster Management</a></li>
-                        <li><a href="#">Environmental Sciences</a></li>
-                        <li><a href="#">Geological Mapping</a></li>
-                        <li><a href="#">Academic Consultation</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col footer-contact">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> prof.mahajan@example.com</p>
-                    <p><i class="fas fa-phone"></i> +91 XXXXXXXXXX</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Himachal Pradesh, India</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-researchgate"></i></a>
-                        <a href="#"><i class="fab fa-google-scholar"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Prof. Ambrish Kumar Mahajan. All Rights Reserved.</p>
+            <div class="footer-content">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+                    &copy; 2025 Prof. A.K. Mahajan - Geological Consultancy & Disaster Management Services
+                </p>
+                <p style="color: var(--text-light); margin-bottom: 1rem;">
+                    National Geoscience Award Winner 2017 | Member: Bureau of Indian Standards | State Disaster Management Authority (HP)
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-light);">
+                    Specialized in Himalayan Geology • Seismic Risk Assessment • Landslide Mitigation • Infrastructure Safety
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Basic JavaScript for mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('.main-nav');
-            nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
-        
-        // Note: For a production site, you would add JavaScript for:
-        // 1. Testimonial carousel functionality
-        // 2. Form validation
-        // 3. Smooth scrolling
-        // 4. And other interactive elements
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 200;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Form submission handling
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // Show success message
+            alert(`Thank you ${data['contact-name']}!\n\nYour project inquiry has been received. Prof. Mahajan will review your requirements and contact you within 24 hours.\n\nProject Type: ${data['project-type']}\nLocation: ${data['location']}\n\nWe appreciate your interest in our geological consultancy services.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add loading animations
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.float-item');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+            });
+        });
+
+        // Counter animation for stats
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('+') ? '+' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + (counter.textContent.includes('+') ? '+' : '');
+                    }
+                };
+                
+                updateCounter();
+            });
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-grid');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
     </script>
 </body>
 </html>
